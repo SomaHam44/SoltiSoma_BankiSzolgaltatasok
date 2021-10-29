@@ -12,7 +12,4 @@ public  abstract class BankiSzolgaltatas {
         return tulajdonos;
     }
 
-    private void setTulajdonos(Tulajdonos tulajdonos) {
-        this.tulajdonos = tulajdonos;
-    }
 }

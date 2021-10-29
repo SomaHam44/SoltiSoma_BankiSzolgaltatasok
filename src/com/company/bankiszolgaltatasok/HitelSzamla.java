@@ -11,10 +11,6 @@ public class HitelSzamla extends Szamla {
         return hitelKeret;
     }
 
-    private void setHitelKeret(int hitelKeret) {
-        this.hitelKeret = hitelKeret;
-    }
-
     @Override
     public boolean kivesz(int osszeg) {
         if (this.hitelKeret >= osszeg) {
