@@ -1,9 +1,10 @@
 package com.company.bankiszolgaltatasok;
 
-public class BankiSzolgaltatas {
+public  abstract class BankiSzolgaltatas {
     private final Tulajdonos tulajdonos;
 
-    private BankiSzolgaltatas(Tulajdonos tulajdonos) {
+    public BankiSzolgaltatas(Tulajdonos tulajdonos) {
         this.tulajdonos = tulajdonos;
     }
+
 }
