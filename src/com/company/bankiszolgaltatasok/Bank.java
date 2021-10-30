@@ -16,9 +16,48 @@ public class Bank {
     }
 
     public Szamla szamlaNyitas(Tulajdonos tulajdonos, int hitelkeret) {
-        if (hitelkeret >= ) {
-            return new MegtakaritasiSzamla(tulajdonos, hitelkeret,)
+        if (hitelkeret >=  0) {
+            MegtakaritasiSzamla megtakaritasiszamla = new MegtakaritasiSzamla(tulajdonos);
+            szamlaLista.add(megtakaritasiszamla);
+            return megtakaritasiszamla;
         }
+            HitelSzamla hitelszamla = new HitelSzamla(tulajdonos, hitelkeret);
+            szamlaLista.add(hitelszamla);
+            return hitelszamla;
 
     }
+
+    public int getOsszEgyenleg(Tulajdonos tulajdonos) {
+        int osszeg = 0;
+        for (Szamla szamlak: szamlaLista) {
+            osszeg += szamlak.getAktualisEgyenleg();
+        }
+        return osszeg;
+
+    }
+
+    public Szamla getLegnagyobbEgyenleguSzamla(Tulajdonos tulajdonos) {
+        int legnagyobb = 0;
+        for (int i = 0; i < szamlaLista.size(); i++) {
+            if (szamlaLista.get(i).getAktualisEgyenleg() > szamlaLista.get(legnagyobb).getAktualisEgyenleg()) {
+                legnagyobb = i;
+            }
+        }
+        return szamlaLista.get(legnagyobb);
+
+    }
+
+    public long getOsszhitelkeret() {
+        long osszesKeret = 0;
+        for (int i = 0; i < szamlaLista.size(); i++) {
+            if (szamlaLista.get(i) instanceof HitelSzamla) {
+                osszesKeret += ((HitelSzamla) szamlaLista.get(i)).getHitelKeret();
+            }
+
+        }
+        return osszesKeret;
+
+    }
+
+
 }
