@@ -25,6 +25,9 @@ public class MegtakaritasiSzamla extends Szamla{
     }
 
     public void kamatJovaIras() {
+        int egyenleg  = this.getAktualisEgyenleg();
+        double kamatjovairtOsszeg = this.getAktualisEgyenleg() + this.kamat;
+
 
     }
 }
