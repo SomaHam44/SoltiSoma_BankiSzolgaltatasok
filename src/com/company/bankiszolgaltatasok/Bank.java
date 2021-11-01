@@ -15,8 +15,12 @@ public class Bank {
 
     }
 
+    public List<Szamla> getSzamlaLista() {
+        return szamlaLista;
+    }
+
     public Szamla szamlaNyitas(Tulajdonos tulajdonos, int hitelkeret) {
-        if (hitelkeret >=  0) {
+        if (hitelkeret >= 0) {
             MegtakaritasiSzamla megtakaritasiszamla = new MegtakaritasiSzamla(tulajdonos);
             szamlaLista.add(megtakaritasiszamla);
             return megtakaritasiszamla;
@@ -25,12 +29,16 @@ public class Bank {
             szamlaLista.add(hitelszamla);
             return hitelszamla;
 
+
     }
 
     public int getOsszEgyenleg(Tulajdonos tulajdonos) {
         int osszeg = 0;
         for (Szamla szamlak: szamlaLista) {
-            osszeg += szamlak.getAktualisEgyenleg();
+            if (szamlak.getTulajdonos() == tulajdonos) {
+                osszeg += szamlak.getAktualisEgyenleg();
+
+            }
         }
         return osszeg;
 
@@ -39,9 +47,12 @@ public class Bank {
     public Szamla getLegnagyobbEgyenleguSzamla(Tulajdonos tulajdonos) {
         int legnagyobb = 0;
         for (int i = 0; i < szamlaLista.size(); i++) {
-            if (szamlaLista.get(i).getAktualisEgyenleg() > szamlaLista.get(legnagyobb).getAktualisEgyenleg()) {
-                legnagyobb = i;
+            if (szamlaLista.get(i).getTulajdonos() == tulajdonos) {
+                if (szamlaLista.get(i).getAktualisEgyenleg() > szamlaLista.get(legnagyobb).getAktualisEgyenleg()) {
+                    legnagyobb = i;
+                }
             }
+
         }
         return szamlaLista.get(legnagyobb);
 
