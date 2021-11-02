@@ -8,9 +8,7 @@ public class Bank {
     private List<Szamla> szamlaLista;
     private Scanner sc = new Scanner(System.in);
 
-    public Bank() {
-        System.out.println("Kérek egy maximális elemszámot: ");
-        int elemszam = Integer.parseInt(sc.nextLine());
+    public Bank(int elemszam) {
         szamlaLista = new ArrayList<>(elemszam);
 
     }

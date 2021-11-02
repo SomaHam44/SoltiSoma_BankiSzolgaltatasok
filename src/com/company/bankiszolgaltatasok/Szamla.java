@@ -6,6 +6,7 @@ public abstract class Szamla extends BankiSzolgaltatas  {
 
     public Szamla(Tulajdonos tulajdonos) {
         super(tulajdonos);
+        this.aktualisEgyenleg = 0;
     }
 
     public int getAktualisEgyenleg() {

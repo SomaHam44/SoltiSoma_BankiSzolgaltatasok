@@ -1,7 +1,7 @@
 package com.company.bankiszolgaltatasok;
 
 public class MegtakaritasiSzamla extends Szamla{
-    private static double kamat;
+    private static double kamat = 10;
     public double alapKamat() {
         return this.kamat;
     }
@@ -29,7 +29,9 @@ public class MegtakaritasiSzamla extends Szamla{
 
     public void kamatJovaIras() {
         int egyenleg  = this.getAktualisEgyenleg();
-        double kamatjovairtOsszeg = this.getAktualisEgyenleg() + this.kamat;
+        double kamatjovairtOsszeg = this.getAktualisEgyenleg() + this.getKamat();
+        System.out.println("A kamat jováírt összeg: " + kamatjovairtOsszeg);
+
 
 
     }
