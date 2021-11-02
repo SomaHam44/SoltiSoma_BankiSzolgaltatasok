@@ -1,5 +1,6 @@
 package com.company.bankiszolgaltatasok;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -61,15 +62,15 @@ public class Main {
         System.out.println("Harmadik kártya kártyaszáma: " + k3.getKartyaSzam());
         System.out.println("Második kártya kártyaszáma: " + k2.getKartyaSzam());
 
-        System.out.println("Vásárlás metódus eredménye: " + k3.vasarlas(1000));
-        System.out.println("Vásárlás metódus eredménye a 4.kártya esetén: " + k4.vasarlas(100));
+        System.out.println("Vásárlás metódus eredménye a harmadik kártán: " + k3.vasarlas(1000));
+        System.out.println("Vásárlás metódus eredménye a 4.kártya esetén: " + k4.vasarlas(100) + "\n");
 
-
-
+        System.out.println("A Bank osztály tesztelése : ");
         Bank b1 = new Bank(6);
-
-
-        List<Szamla> szamlaLista = b1.getSzamlaLista();
+        Bank b2 = new Bank(3);
+        List<Szamla> szamlaLista;
+        List<Szamla> szamlaLista2;
+        szamlaLista = b1.getSzamlaLista();
 
         b1.szamlaNyitas(t1, 200000);
         b1.szamlaNyitas(t1, 200000);
@@ -80,8 +81,7 @@ public class Main {
         b1.szamlaNyitas(t4, 200540);
 
 
-
-
+        System.out.println("A számlákat tartalmazó lista elemeire meghívható metódusok és eredményük : ");
         for (Szamla szamla: szamlaLista) {
             szamla.befizet(500);
             System.out.println("Kivesz:  " + szamla.kivesz(290));
@@ -97,25 +97,19 @@ public class Main {
         szamlaLista.add(m1);
         szamlaLista.add(m2);
 
-        System.out.println(b1.getOsszhitelkeret());
+        System.out.println("Az első tulajdonos összes egyenlege: " + b1.getOsszEgyenleg(t1));
+        System.out.println("A második tulajdonos összes egyenlege: " + b1.getOsszEgyenleg(t2));
 
+        b1.getLegnagyobbEgyenleguSzamla(t2);
+        b1.getLegnagyobbEgyenleguSzamla(t1); 
 
+        System.out.println("Összes hitelkeret : " + b1.getOsszhitelkeret());
 
+        szamlaLista2 = b2.getSzamlaLista();
 
-
-
-
-        k5.vasarlas(255);
-        k1.vasarlas(200000);
-
-        b1.szamlaNyitas(t1, 200000);
-        b1.szamlaNyitas(t1, 200000);
-        b1.szamlaNyitas(t1, 200000);
-        b1.szamlaNyitas(t2, 200040);
-        System.out.println(b1.getOsszEgyenleg(t1));
-        b1.getLegnagyobbEgyenleguSzamla(t1);
-        b1.getOsszhitelkeret();
-
+        b2.szamlaNyitas(t1, 200000);
+        b2.szamlaNyitas(t1, 200000);
+        b2.szamlaNyitas(t3, 200000);
 
 
 

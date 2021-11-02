@@ -52,7 +52,9 @@ public class Bank {
             }
 
         }
+
         return szamlaLista.get(legnagyobb);
+
 
     }
 
