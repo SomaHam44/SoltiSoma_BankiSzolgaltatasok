@@ -1,13 +1,16 @@
 package com.company.bankiszolgaltatasok;
 
 public class MegtakaritasiSzamla extends Szamla{
-    private static double kamat = 10;
-    public double alapKamat() {
-        return this.kamat;
+    private double kamat;
+    
+    public static double alapKamat() {
+        double kamat = 10;
+        return kamat;
     }
 
     public MegtakaritasiSzamla(Tulajdonos tulajdonos) {
         super(tulajdonos);
+        this.kamat = alapKamat();
 
     }
 
