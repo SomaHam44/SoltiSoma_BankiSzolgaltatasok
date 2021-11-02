@@ -9,8 +9,6 @@ public class Teszteles {
 
     public  void tesztelo() {
 
-        System.out.println("Java - Banki szolgáltatások projekt\n");
-
         System.out.println("Tulajdonos osztály függvényeinek tesztelése: ");
 
         Tulajdonos t1 = new Tulajdonos("Felhasználó");
