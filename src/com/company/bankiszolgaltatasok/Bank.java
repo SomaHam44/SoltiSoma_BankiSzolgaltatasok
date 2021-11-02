@@ -2,11 +2,10 @@ package com.company.bankiszolgaltatasok;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
 
 public class Bank {
     private List<Szamla> szamlaLista;
-    private Scanner sc = new Scanner(System.in);
 
     public Bank(int elemszam) {
         szamlaLista = new ArrayList<>(elemszam);
@@ -21,7 +20,7 @@ public class Bank {
         if (hitelkeret >= 0) {
             MegtakaritasiSzamla megtakaritasiszamla = new MegtakaritasiSzamla(tulajdonos);
             szamlaLista.add(megtakaritasiszamla);
-            return megtakaritasiszamla;
+            return  new MegtakaritasiSzamla(tulajdonos);
         }
             HitelSzamla hitelszamla = new HitelSzamla(tulajdonos, hitelkeret);
             szamlaLista.add(hitelszamla);
