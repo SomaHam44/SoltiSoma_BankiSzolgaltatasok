@@ -52,7 +52,7 @@ public class Teszteles {
         MegtakaritasiSzamla m2 = new MegtakaritasiSzamla(t1);
         MegtakaritasiSzamla m3 = new MegtakaritasiSzamla(t3);
 
-        System.out.println("Második megtakaritási számlának alap kamata: " + m2.alapKamat());
+        System.out.println("Második megtakaritási számlának alap kamata: " + m2.getKamat());
         m1.befizet(400);
         m1.kamatJovaIras();
         System.out.println("Első megtakaritási számlának kamata a módosítás előtt:  " + m1.getKamat());
