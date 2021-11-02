@@ -47,9 +47,27 @@ public class Main {
         m1.kamatJovaIras();
         System.out.println("Első megtakaritási számlának kamata a módosítás előtt:  " + m1.getKamat());
         m1.setKamat(430);
-        System.out.println("Első megtakaritási számlának kamata a mődosítás után: " + m1.getKamat());
+        System.out.println("Első megtakaritási számlának kamata a mődosítás után: " + m1.getKamat() + "\n");
+
+        System.out.println("A Kártya osztály tesztelése: ");
+
+        Kartya k1 = new Kartya(t1,h1,"11111");
+        Kartya k2 = new Kartya(t1,h1,"2367");
+        Kartya k3 = new Kartya(t2,h1,"234567");
+        Kartya k4 = new Kartya(t1,h3,"1111");
+        Kartya k5 = new Kartya(t2,m1,"6789");
+
+        System.out.println("Ötödik kártya kártyaszáma: " + k5.getKartyaSzam());
+        System.out.println("Harmadik kártya kártyaszáma: " + k3.getKartyaSzam());
+        System.out.println("Második kártya kártyaszáma: " + k2.getKartyaSzam());
+
+        System.out.println("Vásárlás metódus eredménye: " + k3.vasarlas(1000));
+        System.out.println("Vásárlás metódus eredménye a 4.kártya esetén: " + k4.vasarlas(100));
+
+
 
         Bank b1 = new Bank(6);
+
 
         List<Szamla> szamlaLista = b1.getSzamlaLista();
 
@@ -81,11 +99,11 @@ public class Main {
 
         System.out.println(b1.getOsszhitelkeret());
 
-        Kartya k1 = new Kartya(t1,h1,"11111");
-        Kartya k2 = new Kartya(t1,h1,"2367");
-        Kartya k3 = new Kartya(t2,h1,"234567");
-        Kartya k4 = new Kartya(t1,h3,"1111");
-        Kartya k5 = new Kartya(t2,m1,"6789");
+
+
+
+
+
 
         k5.vasarlas(255);
         k1.vasarlas(200000);
