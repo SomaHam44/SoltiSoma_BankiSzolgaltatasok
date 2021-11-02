@@ -1,7 +1,7 @@
 package com.company.bankiszolgaltatasok;
 
 public abstract class Szamla extends BankiSzolgaltatas  {
-    private int aktualisEgyenleg;
+    protected int aktualisEgyenleg;
 
 
     public Szamla(Tulajdonos tulajdonos) {

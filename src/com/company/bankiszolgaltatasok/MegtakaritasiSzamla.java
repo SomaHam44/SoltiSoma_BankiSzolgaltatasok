@@ -2,7 +2,7 @@ package com.company.bankiszolgaltatasok;
 
 public class MegtakaritasiSzamla extends Szamla{
     private double kamat;
-    
+
     public static double alapKamat() {
         double kamat = 10;
         return kamat;
